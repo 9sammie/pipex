@@ -1,0 +1,8 @@
+total 96
+-rwxr-xr-x 1 maballet 2024_lyon 17000 Mar  4 17:48 a.out
+drwxr-xr-x 2 maballet 2024_lyon    24 Mar  3 13:11 files
+drwxr-xr-x 2 maballet 2024_lyon    21 Mar  3 13:05 inc
+drwxr-xr-x 5 maballet 2024_lyon    70 Feb 27 18:35 libft
+-rw-r--r-- 1 maballet 2024_lyon 69764 Mar  4 11:55 libft.a
+-rw-r--r-- 1 maballet 2024_lyon  2126 Mar  3 13:10 Makefile
+drwxr-xr-x 2 maballet 2024_lyon    20 Mar  3 19:38 src
