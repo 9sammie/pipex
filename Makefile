@@ -5,7 +5,8 @@
 #############################################################################################
 
 SRC_DIR = src
-SRC_FILES = 
+SRC_FILES = main.c \
+			find_path.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
@@ -15,7 +16,7 @@ SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 #############################################################################################
 #############################################################################################
 
-NAME = so_long
+NAME = pipex
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g3
 HEADERS = inc/pipex.h
@@ -40,11 +41,18 @@ $(LIBFT):
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS) libft/inc/libft.h | $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ) -L $(LIBFT_DIR) -lft -o $(NAME)
+$(NAME): lib
+		$(MAKE) .compile 
+
+lib:
+		@$(MAKE) --no-print-directory -C $(LIBFT_DIR)
+
+.compile: $(OBJ) $(LIBFT)
+		$(CC) $(CFLAGS) $(OBJ) -L $(LIBFT_DIR) -lft -o $(NAME)
+		@touch .compile
 
 clean:
 	rm -rf $(OBJ_DIR)

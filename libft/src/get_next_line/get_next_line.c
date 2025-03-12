@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 16:19:30 by maballet          #+#    #+#             */
-/*   Updated: 2025/02/03 17:49:24 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/03/03 15:27:16 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ char	*ft_putbuf(char *line, char *buffer)
 		return (ft_free_line(line));
 	if (buffer[n] == '\n')
 	{
-		ft_memmove_gnl(buffer, buffer + n + 1, ft_strlen_gnl(buffer + n + 1) + 1);
+		ft_memmove_gnl(buffer, buffer + n + 1,
+			ft_strlen_gnl(buffer + n + 1) + 1);
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 14:08:25 by maballet          #+#    #+#             */
-/*   Updated: 2025/02/03 17:55:31 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/03/03 15:26:35 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ int	ft_printf(const char *s, ...)
 		return (-1);
 	while (s[i])
 	{
-		if ((s[i] == '%' && !(ft_strchr_printf("cspdiuxX%", s[i + 1]))) || s == 0)
+		if ((s[i] == '%' && !(ft_strchr_printf("cspdiuxX%", s[i + 1])))
+			|| s == 0)
 			return (-1);
 		if (s[i] == '%')
 		{
